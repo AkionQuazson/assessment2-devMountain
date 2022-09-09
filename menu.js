@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name: 'Hawaiian',
+    price: 15,
+    category: 'entree',
+    popularity: .30,
+    rating: 100,
+    tags: ['unique', 'fruit', 'meat']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity);
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -63,7 +70,8 @@
 */
 
 //CODE HERE
-
+let {price} = pizza;
+console.log(price);
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +81,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza;
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +97,48 @@
 */
 
 //CODE HERE
-
+let foodArr = [
+    {
+        name: 'Pizza',
+        price: 15,
+        category: 'entree',
+        popularity: 1.00,
+        rating: 95,
+        tags: ['common', 'quick', 'meat']
+    },
+    {
+        name: 'Hamburger',
+        price: 5,
+        category: 'entree',
+        popularity: .80,
+        rating: 65,
+        tags: ['common', 'quick', 'meat']
+    },
+    {
+        name: 'Fries',
+        price: 3,
+        category: 'side',
+        popularity: .85,
+        rating: 42,
+        tags: ['common', 'quick', 'vegetable']
+    },
+    {
+        name: 'Ice cream',
+        price: 5,
+        category: 'dessert',
+        popularity: 1.00,
+        rating: 100,
+        tags: ['sweet', 'fruit', 'chocolate']
+    },
+    {
+        name: 'Chicken Nuggets',
+        price: 10,
+        category: 'entree/side',
+        popularity: .75,
+        rating: 98,
+        tags: ['common', 'dippable', 'quick', 'meat']
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -104,8 +154,8 @@
 */
 
 //CODE HERE
-
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter((food) => food.tags.includes('meat'));
+console.log(filteredFood);
 
 
 
