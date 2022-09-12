@@ -110,7 +110,7 @@ let foodArr = [
         name: 'Hamburger',
         price: 5,
         category: 'entree',
-        popularity: .80,
+        popularity: .50,
         rating: 65,
         tags: ['common', 'quick', 'meat']
     },
@@ -199,6 +199,20 @@ console.log(filteredFood);
 */
 
 //CODE HERE
+const filterByProperty = (property, number, type) => {
+    const condensedArr = foodArr.filter((food) => {
+		if (food[property] > number && type === 'above') {
+			return true;
+		}
+		else if (food[property] < number && type === 'below') {
+			return true;
+		}
+		else {
+			return false;
+		}
+    });
+	return condensedArr;
+}
 
 
 /*
@@ -209,3 +223,5 @@ console.log(filteredFood);
 */
 
 //CODE HERE
+console.log('FilterByProperty: ', filterByProperty('price', 10, 'below'));
+console.log('FilterByProperty: ', filterByProperty('popularity', .5, 'above'));
