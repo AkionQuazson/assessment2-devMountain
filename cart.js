@@ -35,8 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+ const summedPrice = cart.reduce((total, item) => total += item.price, 0);
+console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,8 +54,12 @@ const cart = [
 */
 
 //CODE HERE
-
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    cartTotal *= (1 + tax);
+	cartTotal -= couponValue;
+	return cartTotal;
+}
+console.log(calcFinalPrice(12, 2, .05));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,7 +82,12 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+   customer {
+	returnFrequency: how often the customer visits the cart, measured in times per month. This should be a number to count that.
+	favoriteOption: to expedite return visits and make shopping at the cart easy and painless. This should be a string that matches a menu item.
+	numberOfGuests: how many people the customer brings on average, to have enough prepared for the supposed return. This should also be a number, because common sense.
+	likesLeftovers: will the user buy extra and make supplies run thin? This is a bool, or at least should be.
+   }
 
 */
 
@@ -88,3 +97,9 @@ const cart = [
 */
 
 //CODE HERE
+let customerJ = {
+	returnFrequency: 4,
+	favoriteOption: 'pizza',
+	numberOfGuests: 2,
+	likesLeftovers: false
+}
